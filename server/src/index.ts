@@ -1,9 +1,12 @@
+import dotenv from 'dotenv';
+dotenv.config({ path: './.env' });
+
 import express, { Request, Response } from 'express';
 
 // Create an instance of the Express application
 const app = express();
 
-// Define the port; use the PORT environment variable if available, otherwise default to 5000
+// Define the port using the PORT environment variable from .env; fallback to 5000 if not set
 const PORT = process.env.PORT || 5000;
 
 // Middleware to parse JSON bodies from incoming requests
