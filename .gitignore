@@ -1,0 +1,10 @@
+# Node
+node_modules/
+dist/
+.env
+
+# Vite
+client/node_modules/
+client/dist/
+
+.DS_Store
