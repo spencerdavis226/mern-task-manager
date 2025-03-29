@@ -2,9 +2,13 @@ import dotenv from 'dotenv';
 dotenv.config({ path: './.env' });
 import express, { Request, Response } from 'express';
 import taskRoutes from './routes/taskRoutes';
+import connectDB from './config/db';
 
 // Create an instance of the Express application
 const app = express();
+
+// Connect to MongoDB
+connectDB();
 
 // Define the port using the PORT environment variable from .env; fallback to 5000 if not set
 const PORT = process.env.PORT || 5000;
