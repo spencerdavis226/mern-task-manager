@@ -3,15 +3,19 @@ dotenv.config({ path: './.env' });
 import express, { Request, Response } from 'express';
 import taskRoutes from './routes/taskRoutes';
 import connectDB from './config/db';
+import cors from 'cors';
 
 // Create an instance of the Express application
 const app = express();
+
+// Enable CORS
+app.use(cors());
 
 // Connect to MongoDB
 connectDB();
 
 // Define the port using the PORT environment variable from .env; fallback to 5000 if not set
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Middleware to parse JSON bodies from incoming requests
 app.use(express.json());
